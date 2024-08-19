@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            body{
+                background-color:rgb(10, 39, 83);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            a{color: rgb(42, 241, 188);text-decoration: none;}
+            b{
+            color: white; text-decoration: none;
+            font-size: 20px;
+            }
+            span{
+                font-weight: 700;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <h2 class="display-5" style="color:hsl(193, 84%, 56%)"><span>Registration Form</span></h2>
+            <hr>
+            <form name="frm" action="register.py" method="post">
+                <table>
+                    <tr>
+                        <td><b>Confirmation key : </b></td>
+                        <td><input type="text" name="cid" class="form-control" required autocomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <td><b>UserId : </b></td>
+                        <td><input type="text" name="uid" class="form-control" required autocomplete="off"></td>
+                        <td><div id="stat"></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Set Password : </b></td>
+                        <td><input type="text" name="pass" class="form-control" required autocomplete="off" onfocus="makeGetRequest()"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Enter UserName : </b></td>
+                        <td><input type="text" name="nm" class="form-control" required autocomplete="off"></td>
+                    </tr>
+                        
+                    <tr>
+                        <td><input type="submit" value="Register" class="btn btn-secondary"></td>
+                    </tr>
+                </table>
+            </form>
+            
+        </div>
+    </body>
+</html>

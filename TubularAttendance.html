@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Firebase data</title>
+        <!--<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> -->
+        <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js"></script>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <th rowspan="2">Sr No</th>
+                <th rowspan="2">Roll No</th>
+                <th rowspan="2">Student Name</th>
+                <th colspan="3"> date</th>
+                <tr>
+                    <th>Lecture 1</th>
+                    <th>Lecture 2</th>
+                    <th>Lecture 3</th>
+                </tr>
+            </thead>
+            <tbody id="table_body1">
+                <!-- <td>1</td>
+                <td>1</td>
+                <td>abcd</td>
+                <td>p</td>
+                <td>a</td>
+                <td>p</td> -->
+            </tbody>
+        </table>
+
+        <!--Firebase Libraries add here-->
+        <!-- <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js"></script> -->
+        
+  
+
+        <script id="MainScript" > 
+            // Import the functions you need from the SDKs you need
+            // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+            // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+            // -------Configuration-----
+            var firebaseConfig = {
+                apiKey: "AIzaSyCcetRJa_ybgnHTKfOfz4PU8XlSzh6f7i0",
+                authDomain: "facerecognitionbasedatte-b4a54.firebaseapp.com",
+                databaseURL: "https://facerecognitionbasedatte-b4a54-default-rtdb.firebaseio.com",
+                projectId: "facerecognitionbasedatte-b4a54",
+                storageBucket: "facerecognitionbasedatte-b4a54.appspot.com",
+                messagingSenderId: "1011023746816",
+                appId: "1:1011023746816:web:03a1da48a7d52cce58c5e5",
+                measurementId: "G-RLQH0YNVRH"
+            };
+            firebase.initializeApp(firebaseConfig);
+
+            // ----------------------GET ALL DATA --------------------------
+
+            function SelectAllData(){
+                firebase.database().ref('Students').once('value',
+                function(AllRecords){
+                    AllRecords.forEach(
+                        function(CurrentRecord){
+                            var fname = CurrentRecord.val().fname;
+                            var lname = CurrentRecord.val().lname;
+                            var RollNo = CurrentRecord.val()['Roll Number'];
+                            var Date = CurrentRecord.val()['Attendance Sheet'];
+
+                            var lec1 = CurrentRecord.val()['Attendance Sheet']['Date']['Lecture 1'];
+                            var lec2 = CurrentRecord.val()['Attendance Sheet']['Date']['Lecture 2'];
+                            var lec3 = CurrentRecord.val()['Attendance Sheet']['Date']['Lecture 3'];
+                            console.log(fname)
+                            console.log(Date)
+                            console.log(lec1)
+                            AddItemsToTable(fname,lname,RollNo,Date,lec1,lec2,lec3);
+                        });
+                    });
+                }
+                window.onload = SelectAllData;
+
+                // --------------------------filling the table-----------------------
+            var stdNo=0;
+            function AddItemsToTable(fname,lname,RollNo,Date,lec1,lec2,lec3){
+                var table_body1= document.getElementById('table_body1');
+                var trow = document.createElement('tr');
+                var td1= document.createElement('td');
+                var td2= document.createElement('td');
+                var td3= document.createElement('td');
+                var td4= document.createElement('td');
+                var td5= document.createElement('td');
+                var td6= document.createElement('td');
+                td1.innerHTML=++stdNo;
+                td2.innerHTML=RollNo;
+                td3.innerHTML=fname + " " + lname;
+                td4.innerHTML=lec1;
+                td5.innerHTML=lec2;
+                td6.innerHTML=lec3;
+
+                trow.appendChild(td1); 
+                trow.appendChild(td2); 
+                trow.appendChild(td3);
+                trow.appendChild(td4);
+                trow.appendChild(td5);
+                trow.appendChild(td6);
+                tbody.appendChild(trow);
+            }
+                
+
+        </script>
+</body>
+</html>

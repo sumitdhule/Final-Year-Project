@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            body{
+                background-color:rgb(10, 39, 83);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            a{color: rgb(42, 241, 188);text-decoration: none;}
+            b{
+            color: white; text-decoration: none;
+            font-size: 20px;
+            }
+            span{
+                font-weight: 700;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h3 class="display-5" style="color:hsl(193, 84%, 56%)"><span>Search Details</span></h3>
+            <hr>
+            <form action="Studentinfo.py" method="post">
+                <table>
+                    <tr>
+                        <td style="color: rgb(62, 230, 137);"><b>Enter Roll No : </b></td>
+                        <td><input type="text" name="bno" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Search" class="btn btn-secondary" ></td>
+                    </tr>
+                </table>
+            </form> 
+        </div>
+    </body>
+</html> 

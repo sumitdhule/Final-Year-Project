@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            body{
+                background-image: url('./02.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .color{
+                color: white;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h3 class="display-5" style="color: rgb(12, 173, 237);"><b>Check Attendance...</b></h3>
+            <hr>
+            <form action="Dailyattendence.py" method="post">
+                <table>
+                    <tr>
+                        <td style="color: rgb(62, 230, 137);"><b>Enter Starting Date (From) : </b></td>
+                        <td><input type="text" name="stdt" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td style="color: rgb(62, 230, 137);"><b>Enter Last Date (To) : </b></td>
+                        <td><input type="text" name="etdt" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Search" class="btn btn-secondary" ></td>
+                    </tr>
+                </table>
+            </form> 
+        </div>
+    </body>
+</html> 

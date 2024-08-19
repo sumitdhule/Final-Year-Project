@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Firebase data</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>First Lecture</th>
+                <th>Second Lecture</th>
+                <th>Third Lecture</th>
+            </thead>
+            <tbody id="tbody1">
+            
+            </tbody>
+        </table>
+
+        <!--Firebase Libraries add here-->
+
+
+
+        
+        <script id="Mainscript">
+            //--------Configuration-------
+
+
+            //----------databse
+
+            function SelectAllData(){
+            firebase.database().ref('Students').once('value',
+            function(AllRecords){
+                AllRecords.forEach(
+                    function(CurrentRecord){
+                        var fname = CurrentRecord.val().NameOfStudent;
+                        var lname = CurrentRecord.val().NameOfStudent;
+                        var lec1 = CurrentRecord.val().lecture1;
+                        var lec2 = CurrentRecord.val().lecture2;
+                        var lec3 = CurrentRecord.val().lecture3;
+                        AddItemsToTable(fname,lname,lec1,lec2,lec3);
+                    }
+
+                );
+                    
+            
+             });
+            }
+            window.onload = SelectAllData;
+
+            //-------------Filling the Table----------//
+            var stdNo=0;
+            function AddItemsToTable(fname,lname,lec1,lec2,lec3){
+                var tbody= document.getElementById('tbody1');
+                var trow = document.createElement('tr');
+                var td1= document.createElement('td');
+                var td2= document.createElement('td');
+                var td3= document.createElement('td');
+                var td4= document.createElement('td');
+                var td5= document.createElement('td');
+                td1.innerHTML=++stdNo;
+                td1.innerHTML=name;
+                td1.innerHTML=lec1;
+                td1.innerHTML=lec3;
+                td1.innerHTML=lec3;
+
+                trow.appendChild(td1); trow.appendChild(td2); trow.appendChild(td3);trow.appendChild(td4);trow.appendChild(td5);
+                tbody.appendChild(trow);
+            }
+        </script>
+    </body>
+</html>

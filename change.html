@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            body{
+                background-color:rgb(10, 39, 83);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            a{color: rgb(42, 241, 188);text-decoration: none;}
+            b{
+            color: white; text-decoration: none;
+            font-size: 20px;
+            }
+            span{
+                font-weight: 700;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h2 class="display-5" style="color:hsl(193, 84%, 56%)"><span>Change Password</span></h2>
+            <hr>
+            <form action="changepass.py" method="post">
+                <table>
+                    <tr>
+                        <td><b>Enter User ID : </b></td>
+                        <td><input type="text" name="uid" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>Enter Current Password : </b></td>
+                        <td><input type="text" name="cur" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>Enter New Password : </b></td>
+                        <td><input type="text" name="nwp" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><b>Confirm Password : </b></td>
+                        <td><input type="text" name="cpp" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Change Password" class="btn btn-secondary"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

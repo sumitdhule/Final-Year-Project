@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            body{
+                background-color:rgb(10, 39, 83);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            a{color: rgb(42, 241, 188);text-decoration: none;}
+            b{
+            color: white; text-decoration: none;
+            font-size: 20px;
+            }
+            span{
+                font-weight: 700;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <h3 class="display-5" style="color:hsl(193, 84%, 56%)"><span>Delete Student Data...</span></h3>
+            <hr>
+            <form action="Delete.py" method="post">
+                <table>
+                    <tr>
+                        <td><b>Enter Student ID : </b></td>
+                        <td><input type="text" name="bno" class="form-control" required autocomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Delete" class="btn btn-secondary"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

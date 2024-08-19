@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <style>
+            body{
+                background-color:rgb(10, 39, 83);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            a{color: rgb(42, 241, 188);text-decoration: none;}
+            b{
+            color: white; text-decoration: none;
+            font-size: 20px;
+            }
+            span{
+                font-weight: 700;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h3 class="display-5" style="color:hsl(193, 84%, 56%)"><span>Add New Student...</span></h3>
+            <hr>
+            <form action="Addstudent.py" method="post">
+                <table>
+                    
+                    <tr>
+                        <td style="font-size: 20px;"><b>Student First Name : </b></td>
+                        <td><input type="text" name="fnm" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><b>Student last Name : </b> </td>
+                        <td><input type="text" name="lnm" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><b>Section : </b> </td>
+                        <td><input type="text" name="sec" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><b>Year Of Admission : </b></td>
+                        <td><input type="text" name="yr" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><b>Department : </b></td> 
+                        <td>
+                            <select name="dept" class="form-control" required>
+                                <option value="it">it</option>
+                                <option value="cse">cse</option>
+                                <option value="ce">ce</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><b>Roll Number : </b></td>
+                        <td><input type="text" name="rno" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;"><b>ADD Photo : </b></td>
+                        <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+                    </tr>
+                    <tr >
+                        <td ><input type="submit" value="Submit" class="btn btn-secondary"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
